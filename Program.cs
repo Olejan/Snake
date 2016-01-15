@@ -46,19 +46,21 @@ namespace Snake
                 Thread.Sleep(100);
             }
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.SetCursorPosition(26, 9);
-            Console.WriteLine("============================");
-            Console.SetCursorPosition(35, 10);
-            Console.WriteLine("Game over");
-            Console.WriteLine();
-            Console.SetCursorPosition(27, 12);
-            Console.WriteLine("Created by:  Oleg Glytenko");
-            Console.SetCursorPosition(32, 13);
-            Console.WriteLine("My first game!!!");
-            Console.SetCursorPosition(26, 14);
-            Console.WriteLine("============================");
+            int y = 9;
+            WriteLine("============================", 26, y++);
+            WriteLine("Game over", 35, y++);
+            WriteLine("", 26, y += 2);
+            WriteLine("Created by:  Oleg Glytenko", 28, y++);
+            WriteLine("My first game!!!", 32, y++);
+            WriteLine("============================", 26, y++);
+            Console.SetCursorPosition(0, 0);
             Thread.Sleep(1000);
             Console.ReadKey();
+        }
+        static void WriteLine(string str, int x, int y)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(str);
         }
     }
 }
